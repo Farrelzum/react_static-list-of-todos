@@ -1,17 +1,11 @@
-import { Todo } from '../../types/Todo';
+import { User } from '../../types/User';
 
 interface TodoProps {
-  todo: Todo | null;
+  user: User;
 }
 
-export const UserInfo = ({ todo }: TodoProps) => {
-  if (!todo || !todo.user) {
-    return null;
-  }
-
-  return (
-    <a className="UserInfo" href={`mailto:${todo.user.email}`}>
-      {todo.user.name}
-    </a>
-  );
-};
+export const UserInfo = ({ user }: TodoProps) => (
+  <a className="UserInfo" href={`mailto:${user.email}`}>
+    {user.name}
+  </a>
+);
